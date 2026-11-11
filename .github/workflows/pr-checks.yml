@@ -1,0 +1,24 @@
+name: PR checks
+
+on:
+  pull_request:
+    types: [opened, edited, synchronize, reopened]
+
+permissions:
+  contents: read
+
+jobs:
+  jira-key-in-title:
+    name: PR title starts with a Jira key
+    runs-on: ubuntu-latest
+    steps:
+      - name: Check the PR title
+        env:
+          PR_TITLE: ${{ github.event.pull_request.title }}
+        run: |
+          echo "PR title: $PR_TITLE"
+          if [[ ! "$PR_TITLE" =~ ^SDGP-[0-9]+[[:space:]] ]]; then
+            echo "::error::PR title must start with a Jira key, for example: SDGP-12 Add login screen"
+            exit 1
+          fi
+          echo "OK: Jira key found"
