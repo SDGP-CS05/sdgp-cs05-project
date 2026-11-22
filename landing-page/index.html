@@ -1,0 +1,746 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <title>GrowSync | Smart oyster mushroom grow chamber for Sri Lanka</title>
+    <meta
+      name="description"
+      content="GrowSync is a 1.7 m cabinet for 15 oyster mushroom bags: a spray nozzle over every bag, mist for humidity, roof fans for fresh air and phone alerts. Join the waitlist."
+    />
+    <link rel="canonical" href="https://growsync.lk/" />
+
+    <link rel="icon" href="favicon.svg" type="image/svg+xml" />
+    <link rel="icon" href="favicon-32.png" type="image/png" sizes="32x32" />
+    <link rel="apple-touch-icon" href="apple-touch-icon.png" />
+    <meta name="theme-color" content="#F2E9DF" />
+
+    <meta property="og:type" content="website" />
+    <meta property="og:site_name" content="GrowSync" />
+    <meta property="og:locale" content="en_LK" />
+    <meta property="og:url" content="https://growsync.lk/" />
+    <meta property="og:title" content="GrowSync | Grow oyster mushrooms without watching the thermometer" />
+    <meta
+      property="og:description"
+      content="A 1.7 m cabinet for 15 sawdust bags. It sprays every bag through its own nozzle, mists the air to keep humidity up, clears heat and CO2 with roof fans, and tells your phone when something is wrong."
+    />
+    <meta property="og:image" content="https://growsync.lk/og-image.png" />
+    <meta property="og:image:width" content="1200" />
+    <meta property="og:image:height" content="630" />
+    <meta
+      property="og:image:alt"
+      content="Line drawing of the GrowSync grow cabinet beside the words: Grow oyster mushrooms without watching the thermometer."
+    />
+
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:title" content="GrowSync | Grow oyster mushrooms without watching the thermometer" />
+    <meta
+      name="twitter:description"
+      content="A 1.7 m cabinet for 15 sawdust bags. It sprays every bag through its own nozzle, mists the air to keep humidity up, clears heat and CO2 with roof fans, and tells your phone when something is wrong."
+    />
+    <meta name="twitter:image" content="https://growsync.lk/og-image.png" />
+    <meta
+      name="twitter:image:alt"
+      content="Line drawing of the GrowSync grow cabinet beside the words: Grow oyster mushrooms without watching the thermometer."
+    />
+
+    <script type="application/ld+json">
+      {
+        "@context": "https://schema.org",
+        "@type": "Product",
+        "name": "GrowSync",
+        "description": "A closed, sensor-driven grow cabinet for 15 sterilized sawdust bags of American oyster mushrooms on five shelves. A spray nozzle sits above every bag, an ultrasonic mist maker keeps humidity up, two roof exhaust fans clear heat and CO2, sensors read three zones inside and one outside, and the grower gets alerts on their phone.",
+        "category": "Mushroom grow cabinet",
+        "width": { "@type": "QuantitativeValue", "value": 1.1, "unitCode": "MTR" },
+        "depth": { "@type": "QuantitativeValue", "value": 0.65, "unitCode": "MTR" },
+        "height": { "@type": "QuantitativeValue", "value": 1.7, "unitCode": "MTR" },
+        "url": "https://growsync.lk/",
+        "image": "https://growsync.lk/og-image.png",
+        "brand": { "@type": "Brand", "name": "GrowSync" },
+        "audience": {
+          "@type": "Audience",
+          "audienceType": "Small-scale oyster mushroom growers",
+          "geographicArea": { "@type": "Country", "name": "Sri Lanka" }
+        }
+      }
+    </script>
+
+    <link rel="preload" href="assets/fonts/fraunces-latin-600-normal.woff2" as="font" type="font/woff2" crossorigin />
+    <link rel="preload" href="assets/fonts/source-sans-3-latin-400-normal.woff2" as="font" type="font/woff2" crossorigin />
+    <link rel="stylesheet" href="css/styles.css" />
+
+    <!-- Apply the saved or system theme before first paint, so there is no flash. -->
+    <script>
+      ;(function () {
+        try {
+          var saved = localStorage.getItem('growsync-theme')
+          var dark = saved ? saved === 'dark' : window.matchMedia('(prefers-color-scheme: dark)').matches
+          if (dark) {
+            document.documentElement.classList.add('dark')
+            document.querySelector('meta[name="theme-color"]').setAttribute('content', '#493124')
+          }
+        } catch (e) {}
+      })()
+    </script>
+  </head>
+
+  <body>
+    <!-- Icon sprite. Paths are from Lucide (ISC licence). -->
+    <svg class="sprite" xmlns="http://www.w3.org/2000/svg" aria-hidden="true" focusable="false">
+      <symbol id="i-house" viewBox="0 0 24 24"><path d="M15 21v-8a1 1 0 0 0-1-1h-4a1 1 0 0 0-1 1v8" /><path d="M3 10a2 2 0 0 1 .709-1.528l7-6a2 2 0 0 1 2.582 0l7 6A2 2 0 0 1 21 10v9a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z" /></symbol>
+      <symbol id="i-triangle-alert" viewBox="0 0 24 24"><path d="m21.73 18-8-14a2 2 0 0 0-3.48 0l-8 14A2 2 0 0 0 4 21h16a2 2 0 0 0 1.73-3" /><path d="M12 9v4" /><path d="M12 17h.01" /></symbol>
+      <symbol id="i-layout-grid" viewBox="0 0 24 24"><rect width="7" height="7" x="3" y="3" rx="1" /><rect width="7" height="7" x="14" y="3" rx="1" /><rect width="7" height="7" x="14" y="14" rx="1" /><rect width="7" height="7" x="3" y="14" rx="1" /></symbol>
+      <symbol id="i-cpu" viewBox="0 0 24 24"><path d="M12 20v2" /><path d="M12 2v2" /><path d="M17 20v2" /><path d="M17 2v2" /><path d="M2 12h2" /><path d="M2 17h2" /><path d="M2 7h2" /><path d="M20 12h2" /><path d="M20 17h2" /><path d="M20 7h2" /><path d="M7 20v2" /><path d="M7 2v2" /><rect x="4" y="4" width="16" height="16" rx="2" /><rect x="8" y="8" width="8" height="8" rx="1" /></symbol>
+      <symbol id="i-users" viewBox="0 0 24 24"><path d="M16 21v-2a4 4 0 0 0-4-4H6a4 4 0 0 0-4 4v2" /><path d="M16 3.128a4 4 0 0 1 0 7.744" /><path d="M22 21v-2a4 4 0 0 0-3-3.87" /><circle cx="9" cy="7" r="4" /></symbol>
+      <symbol id="i-send" viewBox="0 0 24 24"><path d="M14.536 21.686a.5.5 0 0 0 .937-.024l6.5-19a.496.496 0 0 0-.635-.635l-19 6.5a.5.5 0 0 0-.024.937l7.93 3.18a2 2 0 0 1 1.112 1.11z" /><path d="m21.854 2.147-10.94 10.939" /></symbol>
+      <symbol id="i-sun" viewBox="0 0 24 24"><circle cx="12" cy="12" r="4" /><path d="M12 2v2" /><path d="M12 20v2" /><path d="m4.93 4.93 1.41 1.41" /><path d="m17.66 17.66 1.41 1.41" /><path d="M2 12h2" /><path d="M20 12h2" /><path d="m6.34 17.66-1.41 1.41" /><path d="m19.07 4.93-1.41 1.41" /></symbol>
+      <symbol id="i-moon" viewBox="0 0 24 24"><path d="M20.985 12.486a9 9 0 1 1-9.473-9.472c.405-.022.617.46.402.803a6 6 0 0 0 8.268 8.268c.344-.215.825-.004.803.401" /></symbol>
+      <symbol id="i-menu" viewBox="0 0 24 24"><path d="M4 5h16" /><path d="M4 12h16" /><path d="M4 19h16" /></symbol>
+      <symbol id="i-x" viewBox="0 0 24 24"><path d="M18 6 6 18" /><path d="m6 6 12 12" /></symbol>
+      <symbol id="i-arrow-right" viewBox="0 0 24 24"><path d="M5 12h14" /><path d="m12 5 7 7-7 7" /></symbol>
+      <symbol id="i-thermometer" viewBox="0 0 24 24"><path d="M14 4v10.54a4 4 0 1 1-4 0V4a2 2 0 0 1 4 0Z" /></symbol>
+      <symbol id="i-droplets" viewBox="0 0 24 24"><path d="M7 16.3c2.2 0 4-1.83 4-4.05 0-1.16-.57-2.26-1.71-3.19S7.29 6.75 7 5.3c-.29 1.45-1.14 2.84-2.29 3.76S3 11.1 3 12.25c0 2.22 1.8 4.05 4 4.05z" /><path d="M12.56 6.6A10.97 10.97 0 0 0 14 3.02c.5 2.5 2 4.9 4 6.5s3 3.5 3 5.5a6.98 6.98 0 0 1-11.91 4.97" /></symbol>
+      <symbol id="i-shower-head" viewBox="0 0 24 24"><path d="m4 4 2.5 2.5" /><path d="M13.5 6.5a4.95 4.95 0 0 0-7 7" /><path d="M15 5 5 15" /><path d="M14 17v.01" /><path d="M10 16v.01" /><path d="M13 13v.01" /><path d="M16 10v.01" /><path d="M11 20v.01" /><path d="M17 14v.01" /><path d="M20 11v.01" /></symbol>
+      <symbol id="i-bell-ring" viewBox="0 0 24 24"><path d="M10.268 21a2 2 0 0 0 3.464 0" /><path d="M22 8c0-2.3-.8-4.3-2-6" /><path d="M3.262 15.326A1 1 0 0 0 4 17h16a1 1 0 0 0 .74-1.673C19.41 13.956 18 12.499 18 8A6 6 0 0 0 6 8c0 4.499-1.411 5.956-2.738 7.326" /><path d="M4 2C2.8 3.7 2 5.7 2 8" /></symbol>
+      <symbol id="i-wind" viewBox="0 0 24 24"><path d="M12.8 19.6A2 2 0 1 0 14 16H2" /><path d="M17.5 8a2.5 2.5 0 1 1 2 4H2" /><path d="M9.8 4.4A2 2 0 1 1 11 8H2" /></symbol>
+      <symbol id="i-server" viewBox="0 0 24 24"><rect width="20" height="8" x="2" y="2" rx="2" ry="2" /><rect width="20" height="8" x="2" y="14" rx="2" ry="2" /><line x1="6" x2="6.01" y1="6" y2="6" /><line x1="6" x2="6.01" y1="18" y2="18" /></symbol>
+      <symbol id="i-smartphone" viewBox="0 0 24 24"><rect width="14" height="20" x="5" y="2" rx="2" ry="2" /><path d="M12 18h.01" /></symbol>
+      <symbol id="i-mail" viewBox="0 0 24 24"><path d="m22 7-8.991 5.727a2 2 0 0 1-2.009 0L2 7" /><rect x="2" y="4" width="20" height="16" rx="2" /></symbol>
+      <symbol id="i-circle-alert" viewBox="0 0 24 24"><circle cx="12" cy="12" r="10" /><line x1="12" x2="12" y1="8" y2="12" /><line x1="12" x2="12.01" y1="16" y2="16" /></symbol>
+      <symbol id="i-circle-check" viewBox="0 0 24 24"><circle cx="12" cy="12" r="10" /><path d="m16 9-5.5 5.5L8 12" /></symbol>
+      <symbol id="i-loader-circle" viewBox="0 0 24 24"><path d="M21 12a9 9 0 1 1-6.219-8.56" /></symbol>
+    </svg>
+
+    <!--
+      First-paint loader. Pure CSS: the chamber draws itself, a mushroom
+      cluster grows inside, then the veil fades. It never blocks the page:
+      it ignores clicks, hides itself at 1.8s without any JavaScript, and
+      is not shown at all to visitors who prefer reduced motion.
+    -->
+    <div class="loader" aria-hidden="true">
+      <svg viewBox="0 0 246 310">
+        <path class="loader__edge" style="--i: 0" pathLength="1" d="M40 270H170" />
+        <path class="loader__edge" style="--i: 1" pathLength="1" d="M40 270V70" />
+        <path class="loader__edge" style="--i: 2" pathLength="1" d="M170 270V70" />
+        <path class="loader__edge" style="--i: 3" pathLength="1" d="M40 70H170" />
+        <path class="loader__edge" style="--i: 4" pathLength="1" d="M40 70L76 40" />
+        <path class="loader__edge" style="--i: 5" pathLength="1" d="M170 70L206 40" />
+        <path class="loader__edge" style="--i: 6" pathLength="1" d="M170 270L206 240" />
+        <path class="loader__edge" style="--i: 7" pathLength="1" d="M76 40H206" />
+        <path class="loader__edge" style="--i: 8" pathLength="1" d="M206 40V240" />
+        <path class="loader__edge" style="--i: 9" pathLength="1" d="M134.5 70V270" />
+        <path class="loader__edge" style="--i: 10" pathLength="1" d="M40 226H134.5" />
+        <g transform="translate(87 226) rotate(0) scale(2.1)"><g class="loader__grow" style="--d: 850ms"><path class="dw-stem" d="M-2.5 0C-2.5-7-4-11-7-15L7-15C4-11 2.5-7 2.5 0Z" /><path class="dw-gills" d="M-8-14.4L-3-8.5M0-13.6L0-7.5M8-14.4L3-8.5" /><path class="dw-cap" d="M-15-15C-14-26 14-26 15-15C8-12.5-8-12.5-15-15Z" /><path class="dw-shine" d="M-9.5-20.6C-5-23.4 5-23.4 9.5-20.6" /></g></g>
+        <g transform="translate(69 226) rotate(-32) scale(1.4)"><g class="loader__grow" style="--d: 950ms"><path class="dw-stem" d="M-2.5 0C-2.5-7-4-11-7-15L7-15C4-11 2.5-7 2.5 0Z" /><path class="dw-gills" d="M-8-14.4L-3-8.5M0-13.6L0-7.5M8-14.4L3-8.5" /><path class="dw-cap" d="M-15-15C-14-26 14-26 15-15C8-12.5-8-12.5-15-15Z" /><path class="dw-shine" d="M-9.5-20.6C-5-23.4 5-23.4 9.5-20.6" /></g></g>
+        <g transform="translate(105 226) rotate(30) scale(1.25)"><g class="loader__grow" style="--d: 1020ms"><path class="dw-stem" d="M-2.5 0C-2.5-7-4-11-7-15L7-15C4-11 2.5-7 2.5 0Z" /><path class="dw-gills" d="M-8-14.4L-3-8.5M0-13.6L0-7.5M8-14.4L3-8.5" /><path class="dw-cap" d="M-15-15C-14-26 14-26 15-15C8-12.5-8-12.5-15-15Z" /><path class="dw-shine" d="M-9.5-20.6C-5-23.4 5-23.4 9.5-20.6" /></g></g>
+      </svg>
+    </div>
+
+    <a class="skip-link" href="#main">Skip to content</a>
+
+    <header class="site-header">
+      <!-- Phones and small tablets: sticky bar with a menu. -->
+      <div class="topbar">
+        <a class="logo" href="#home" aria-label="GrowSync, back to top">
+          <svg class="logo__mark" viewBox="0 0 32 32" aria-hidden="true">
+            <rect class="logo__box" x="4.5" y="3.5" width="23" height="25" rx="3.5" />
+            <path class="logo__cap" d="M9.5 18c0-4.4 2.9-8 6.5-8s6.5 3.6 6.5 8z" />
+            <path class="logo__shine" d="M12.2 13.6c1-1.3 2.3-2 3.8-2" />
+            <path class="logo__stem" d="M14 18h4v3.6a2 2 0 0 1-4 0z" />
+          </svg>
+          <span class="logo__word">GrowSync</span>
+        </a>
+        <div class="topbar__actions">
+          <button class="icon-button" type="button" data-theme-toggle aria-label="Switch to dark theme">
+            <svg class="icon icon--moon" aria-hidden="true"><use href="#i-moon" /></svg>
+            <svg class="icon icon--sun" aria-hidden="true"><use href="#i-sun" /></svg>
+          </button>
+          <button class="icon-button" type="button" id="menu-open" aria-label="Open menu" aria-haspopup="dialog" aria-controls="menu">
+            <svg class="icon" aria-hidden="true"><use href="#i-menu" /></svg>
+          </button>
+        </div>
+      </div>
+
+      <!-- Wider screens: wordmark at the top, dock fixed at the bottom. -->
+      <div class="container wordmark-row">
+        <a class="logo" href="#home" aria-label="GrowSync, back to top">
+          <svg class="logo__mark" viewBox="0 0 32 32" aria-hidden="true">
+            <rect class="logo__box" x="4.5" y="3.5" width="23" height="25" rx="3.5" />
+            <path class="logo__cap" d="M9.5 18c0-4.4 2.9-8 6.5-8s6.5 3.6 6.5 8z" />
+            <path class="logo__shine" d="M12.2 13.6c1-1.3 2.3-2 3.8-2" />
+            <path class="logo__stem" d="M14 18h4v3.6a2 2 0 0 1-4 0z" />
+          </svg>
+          <span class="logo__word">GrowSync</span>
+        </a>
+      </div>
+
+      <nav class="dock-nav" aria-label="Primary">
+        <ul class="dock" id="dock">
+          <li class="dock__item">
+            <a href="#home" data-nav="home" data-magnetic aria-label="Home" aria-current="location"><svg class="icon" aria-hidden="true"><use href="#i-house" /></svg></a>
+            <span class="dock__label" aria-hidden="true">Home</span>
+          </li>
+          <li class="dock__item">
+            <a href="#problem" data-nav="problem" data-magnetic aria-label="Problem"><svg class="icon" aria-hidden="true"><use href="#i-triangle-alert" /></svg></a>
+            <span class="dock__label" aria-hidden="true">Problem</span>
+          </li>
+          <li class="dock__item">
+            <a href="#features" data-nav="features" data-magnetic aria-label="Features"><svg class="icon" aria-hidden="true"><use href="#i-layout-grid" /></svg></a>
+            <span class="dock__label" aria-hidden="true">Features</span>
+          </li>
+          <li class="dock__item">
+            <a href="#how-it-works" data-nav="how-it-works" data-magnetic aria-label="How it works"><svg class="icon" aria-hidden="true"><use href="#i-cpu" /></svg></a>
+            <span class="dock__label" aria-hidden="true">How it works</span>
+          </li>
+          <li class="dock__item">
+            <a href="#team" data-nav="team" data-magnetic aria-label="Team"><svg class="icon" aria-hidden="true"><use href="#i-users" /></svg></a>
+            <span class="dock__label" aria-hidden="true">Team</span>
+          </li>
+          <li class="dock__item">
+            <a href="#waitlist" data-nav="waitlist" data-magnetic aria-label="Join waitlist"><svg class="icon" aria-hidden="true"><use href="#i-send" /></svg></a>
+            <span class="dock__label" aria-hidden="true">Join waitlist</span>
+          </li>
+          <li class="dock__separator" aria-hidden="true"></li>
+          <li class="dock__item">
+            <button type="button" data-theme-toggle data-magnetic aria-label="Switch to dark theme">
+              <svg class="icon icon--moon" aria-hidden="true"><use href="#i-moon" /></svg>
+              <svg class="icon icon--sun" aria-hidden="true"><use href="#i-sun" /></svg>
+            </button>
+            <span class="dock__label" aria-hidden="true" data-theme-label>Switch to dark theme</span>
+          </li>
+        </ul>
+      </nav>
+    </header>
+
+    <!-- Menu sheet. A native dialog: focus is trapped, Escape closes it. -->
+    <dialog class="sheet" id="menu" aria-labelledby="menu-title">
+      <div class="sheet__head">
+        <h2 class="sheet__title" id="menu-title">Menu</h2>
+        <button class="icon-button" type="button" id="menu-close" aria-label="Close menu">
+          <svg class="icon" aria-hidden="true"><use href="#i-x" /></svg>
+        </button>
+      </div>
+      <nav aria-label="Primary">
+        <ul class="sheet__list">
+          <li><a href="#home" data-nav="home" aria-current="location"><svg class="icon" aria-hidden="true"><use href="#i-house" /></svg>Home</a></li>
+          <li><a href="#problem" data-nav="problem"><svg class="icon" aria-hidden="true"><use href="#i-triangle-alert" /></svg>Problem</a></li>
+          <li><a href="#features" data-nav="features"><svg class="icon" aria-hidden="true"><use href="#i-layout-grid" /></svg>Features</a></li>
+          <li><a href="#how-it-works" data-nav="how-it-works"><svg class="icon" aria-hidden="true"><use href="#i-cpu" /></svg>How it works</a></li>
+          <li><a href="#team" data-nav="team"><svg class="icon" aria-hidden="true"><use href="#i-users" /></svg>Team</a></li>
+          <li><a href="#waitlist" data-nav="waitlist"><svg class="icon" aria-hidden="true"><use href="#i-send" /></svg>Join waitlist</a></li>
+        </ul>
+      </nav>
+    </dialog>
+
+    <main id="main">
+      <!-- ============================ Hero ============================ -->
+      <section class="section section--hero container" id="home" aria-labelledby="hero-title">
+        <div class="hero">
+          <div class="hero__copy">
+            <p class="eyebrow">Smart grow chamber for Sri Lanka</p>
+            <h1 class="display" id="hero-title">Grow oyster mushrooms without watching the thermometer.</h1>
+            <p class="lead hero__lead">
+              A 1.7 m cabinet for 15 sawdust bags. It sprays every bag through its own nozzle, mists the air to
+              keep humidity up, clears heat and CO2 with roof fans, and tells your phone when something is wrong.
+            </p>
+            <div class="hero__actions">
+              <a class="button" href="#waitlist" data-magnetic>
+                Join the waitlist
+                <svg class="icon icon--sm" aria-hidden="true"><use href="#i-arrow-right" /></svg>
+              </a>
+              <a class="text-link" href="#features">See what it does</a>
+            </div>
+            <p class="muted">Built with the Mushroom Development and Training Centre (MDTC).</p>
+          </div>
+
+          <!--
+            Explore the cabinet. Each dot is a button for one part: hover,
+            focus or tap it (or hover the part itself) to light that part up
+            and show what it does. The dots only appear once js/main.js runs.
+          -->
+          <figure class="card hero__figure explore" id="explore">
+            <div class="explore__stage">
+              <svg class="chamber" viewBox="0 0 400 500" role="img" aria-label="Line drawing of the GrowSync cabinet: a tall clear cabinet with two exhaust fans on the roof, five shelves holding three sawdust bags each, a spray pipe on every shelf with a nozzle above each bag, and a side column holding the controls, valves, pump, mist maker and water tank.">
+                <g data-frame="">
+                <!-- Roof and side, clear panels -->
+                <path class="dw-face" d="M44 92L96 56H352L300 92Z" />
+                <path class="dw-face" d="M300 92L352 56V448L300 484Z" />
+                <!-- Feet -->
+                <path class="dw-line dw-line--2" d="M56 484V494H72V484M272 484V494H288V484M336 459V469H350V449" />
+                <!-- Front frame, grow chamber door, service column, shelves -->
+                <rect class="dw-front" x="44" y="92" width="256" height="392" rx="3" />
+                <rect class="dw-door" x="52" y="100" width="172" height="376" rx="1.5" />
+                <path class="dw-line dw-line--2" d="M230 92V484" />
+                <path class="dw-line dw-line--2" d="M52 172H224" />
+                <path class="dw-line dw-line--2" d="M52 244H224" />
+                <path class="dw-line dw-line--2" d="M52 316H224" />
+                <path class="dw-line dw-line--2" d="M52 388H224" />
+                <path class="dw-line dw-line--2" d="M52 460H224" />
+                </g>
+                <!-- Two exhaust fans on the roof -->
+                <g data-part="fans">
+                  <rect class="dw-fan" x="91" y="68" width="34" height="11" rx="2" /><circle class="dw-fan-hub" cx="108" cy="73.5" r="2.5" />
+                  <rect class="dw-fan" x="203" y="68" width="34" height="11" rx="2" /><circle class="dw-fan-hub" cx="220" cy="73.5" r="2.5" />
+                </g>
+                <!-- Drain tray across the floor -->
+                <g data-part="tray">
+                  <rect class="dw-tray" x="54" y="465" width="168" height="9" rx="1.5" />
+                </g>
+                <!-- 15 bags (seen end-on) with oyster clusters -->
+                <g data-part="bags">
+                  <circle class="dw-bag" cx="81" cy="154" r="17" /><path class="dw-dust" d="M74 150h4M83 157h5M78 163h3M85 145h2" />
+                  <circle class="dw-bag" cx="138" cy="154" r="17" /><path class="dw-dust" d="M131 150h4M140 157h5M135 163h3M142 145h2" />
+                  <circle class="dw-bag" cx="195" cy="154" r="17" /><path class="dw-dust" d="M188 150h4M197 157h5M192 163h3M199 145h2" />
+                  <circle class="dw-bag" cx="81" cy="226" r="17" /><path class="dw-dust" d="M74 222h4M83 229h5M78 235h3M85 217h2" />
+                  <circle class="dw-bag" cx="138" cy="226" r="17" /><path class="dw-dust" d="M131 222h4M140 229h5M135 235h3M142 217h2" />
+                  <circle class="dw-bag" cx="195" cy="226" r="17" /><path class="dw-dust" d="M188 222h4M197 229h5M192 235h3M199 217h2" />
+                  <circle class="dw-bag" cx="81" cy="298" r="17" /><path class="dw-dust" d="M74 294h4M83 301h5M78 307h3M85 289h2" />
+                  <circle class="dw-bag" cx="138" cy="298" r="17" /><path class="dw-dust" d="M131 294h4M140 301h5M135 307h3M142 289h2" />
+                  <circle class="dw-bag" cx="195" cy="298" r="17" /><path class="dw-dust" d="M188 294h4M197 301h5M192 307h3M199 289h2" />
+                  <circle class="dw-bag" cx="81" cy="370" r="17" /><path class="dw-dust" d="M74 366h4M83 373h5M78 379h3M85 361h2" />
+                  <circle class="dw-bag" cx="138" cy="370" r="17" /><path class="dw-dust" d="M131 366h4M140 373h5M135 379h3M142 361h2" />
+                  <circle class="dw-bag" cx="195" cy="370" r="17" /><path class="dw-dust" d="M188 366h4M197 373h5M192 379h3M199 361h2" />
+                  <circle class="dw-bag" cx="81" cy="442" r="17" /><path class="dw-dust" d="M74 438h4M83 445h5M78 451h3M85 433h2" />
+                  <circle class="dw-bag" cx="138" cy="442" r="17" /><path class="dw-dust" d="M131 438h4M140 445h5M135 451h3M142 433h2" />
+                  <circle class="dw-bag" cx="195" cy="442" r="17" /><path class="dw-dust" d="M188 438h4M197 445h5M192 451h3M199 433h2" />
+                  <g transform="translate(97 154) rotate(78) scale(0.46)"><path class="dw-stem" d="M-2.5 0C-2.5-7-4-11-7-15L7-15C4-11 2.5-7 2.5 0Z" /><path class="dw-gills" d="M-8-14.4L-3-8.5M0-13.6L0-7.5M8-14.4L3-8.5" /><path class="dw-cap" d="M-15-15C-14-26 14-26 15-15C8-12.5-8-12.5-15-15Z" /><path class="dw-shine" d="M-9.5-20.6C-5-23.4 5-23.4 9.5-20.6" /></g>
+                  <g transform="translate(97 163) rotate(78) scale(0.34)"><path class="dw-stem" d="M-2.5 0C-2.5-7-4-11-7-15L7-15C4-11 2.5-7 2.5 0Z" /><path class="dw-gills" d="M-8-14.4L-3-8.5M0-13.6L0-7.5M8-14.4L3-8.5" /><path class="dw-cap" d="M-15-15C-14-26 14-26 15-15C8-12.5-8-12.5-15-15Z" /><path class="dw-shine" d="M-9.5-20.6C-5-23.4 5-23.4 9.5-20.6" /></g>
+                  <g transform="translate(179 228) rotate(-78) scale(0.44)"><path class="dw-stem" d="M-2.5 0C-2.5-7-4-11-7-15L7-15C4-11 2.5-7 2.5 0Z" /><path class="dw-gills" d="M-8-14.4L-3-8.5M0-13.6L0-7.5M8-14.4L3-8.5" /><path class="dw-cap" d="M-15-15C-14-26 14-26 15-15C8-12.5-8-12.5-15-15Z" /><path class="dw-shine" d="M-9.5-20.6C-5-23.4 5-23.4 9.5-20.6" /></g>
+                  <g transform="translate(154 296) rotate(78) scale(0.46)"><path class="dw-stem" d="M-2.5 0C-2.5-7-4-11-7-15L7-15C4-11 2.5-7 2.5 0Z" /><path class="dw-gills" d="M-8-14.4L-3-8.5M0-13.6L0-7.5M8-14.4L3-8.5" /><path class="dw-cap" d="M-15-15C-14-26 14-26 15-15C8-12.5-8-12.5-15-15Z" /><path class="dw-shine" d="M-9.5-20.6C-5-23.4 5-23.4 9.5-20.6" /></g>
+                  <g transform="translate(154 306) rotate(78) scale(0.32)"><path class="dw-stem" d="M-2.5 0C-2.5-7-4-11-7-15L7-15C4-11 2.5-7 2.5 0Z" /><path class="dw-gills" d="M-8-14.4L-3-8.5M0-13.6L0-7.5M8-14.4L3-8.5" /><path class="dw-cap" d="M-15-15C-14-26 14-26 15-15C8-12.5-8-12.5-15-15Z" /><path class="dw-shine" d="M-9.5-20.6C-5-23.4 5-23.4 9.5-20.6" /></g>
+                  <g transform="translate(179 370) rotate(-78) scale(0.4)"><path class="dw-stem" d="M-2.5 0C-2.5-7-4-11-7-15L7-15C4-11 2.5-7 2.5 0Z" /><path class="dw-gills" d="M-8-14.4L-3-8.5M0-13.6L0-7.5M8-14.4L3-8.5" /><path class="dw-cap" d="M-15-15C-14-26 14-26 15-15C8-12.5-8-12.5-15-15Z" /><path class="dw-shine" d="M-9.5-20.6C-5-23.4 5-23.4 9.5-20.6" /></g>
+                  <g transform="translate(122 441) rotate(-78) scale(0.44)"><path class="dw-stem" d="M-2.5 0C-2.5-7-4-11-7-15L7-15C4-11 2.5-7 2.5 0Z" /><path class="dw-gills" d="M-8-14.4L-3-8.5M0-13.6L0-7.5M8-14.4L3-8.5" /><path class="dw-cap" d="M-15-15C-14-26 14-26 15-15C8-12.5-8-12.5-15-15Z" /><path class="dw-shine" d="M-9.5-20.6C-5-23.4 5-23.4 9.5-20.6" /></g>
+                  <g transform="translate(122 450) rotate(-78) scale(0.3)"><path class="dw-stem" d="M-2.5 0C-2.5-7-4-11-7-15L7-15C4-11 2.5-7 2.5 0Z" /><path class="dw-gills" d="M-8-14.4L-3-8.5M0-13.6L0-7.5M8-14.4L3-8.5" /><path class="dw-cap" d="M-15-15C-14-26 14-26 15-15C8-12.5-8-12.5-15-15Z" /><path class="dw-shine" d="M-9.5-20.6C-5-23.4 5-23.4 9.5-20.6" /></g>
+                </g>
+                <!-- Riser on the side wall, a spray pipe per shelf, a nozzle over every bag -->
+                <g data-part="spray">
+                  <path class="dw-water dw-water--3" d="M220 116V404" />
+                  <path class="dw-water" d="M220 116H62" />
+                  <rect class="dw-nozzle" x="77.5" y="117" width="7" height="6" rx="1.5" /><path class="dw-spray" d="M76 126L73 133M81 126V134M86 126L89 133" />
+                  <rect class="dw-nozzle" x="134.5" y="117" width="7" height="6" rx="1.5" /><path class="dw-spray" d="M133 126L130 133M138 126V134M143 126L146 133" />
+                  <rect class="dw-nozzle" x="191.5" y="117" width="7" height="6" rx="1.5" /><path class="dw-spray" d="M190 126L187 133M195 126V134M200 126L203 133" />
+                  <path class="dw-water" d="M220 188H62" />
+                  <rect class="dw-nozzle" x="77.5" y="189" width="7" height="6" rx="1.5" /><path class="dw-spray" d="M76 198L73 205M81 198V206M86 198L89 205" />
+                  <rect class="dw-nozzle" x="134.5" y="189" width="7" height="6" rx="1.5" /><path class="dw-spray" d="M133 198L130 205M138 198V206M143 198L146 205" />
+                  <rect class="dw-nozzle" x="191.5" y="189" width="7" height="6" rx="1.5" /><path class="dw-spray" d="M190 198L187 205M195 198V206M200 198L203 205" />
+                  <path class="dw-water" d="M220 260H62" />
+                  <rect class="dw-nozzle" x="77.5" y="261" width="7" height="6" rx="1.5" /><path class="dw-spray" d="M76 270L73 277M81 270V278M86 270L89 277" />
+                  <rect class="dw-nozzle" x="134.5" y="261" width="7" height="6" rx="1.5" /><path class="dw-spray" d="M133 270L130 277M138 270V278M143 270L146 277" />
+                  <rect class="dw-nozzle" x="191.5" y="261" width="7" height="6" rx="1.5" /><path class="dw-spray" d="M190 270L187 277M195 270V278M200 270L203 277" />
+                  <path class="dw-water" d="M220 332H62" />
+                  <rect class="dw-nozzle" x="77.5" y="333" width="7" height="6" rx="1.5" /><path class="dw-spray" d="M76 342L73 349M81 342V350M86 342L89 349" />
+                  <rect class="dw-nozzle" x="134.5" y="333" width="7" height="6" rx="1.5" /><path class="dw-spray" d="M133 342L130 349M138 342V350M143 342L146 349" />
+                  <rect class="dw-nozzle" x="191.5" y="333" width="7" height="6" rx="1.5" /><path class="dw-spray" d="M190 342L187 349M195 342V350M200 342L203 349" />
+                  <path class="dw-water" d="M220 404H62" />
+                  <rect class="dw-nozzle" x="77.5" y="405" width="7" height="6" rx="1.5" /><path class="dw-spray" d="M76 414L73 421M81 414V422M86 414L89 421" />
+                  <rect class="dw-nozzle" x="134.5" y="405" width="7" height="6" rx="1.5" /><path class="dw-spray" d="M133 414L130 421M138 414V422M143 414L146 421" />
+                  <rect class="dw-nozzle" x="191.5" y="405" width="7" height="6" rx="1.5" /><path class="dw-spray" d="M190 414L187 421M195 414V422M200 414L203 421" />
+                </g>
+                <!-- Valves, and the feed through the divider to the riser -->
+                <g data-part="valves">
+                  <path class="dw-water dw-water--3" d="M248 364V182M248 210H220" />
+                  <rect class="dw-valve" x="252" y="184" width="13" height="10" rx="1.5" />
+                  <rect class="dw-valve" x="252" y="200" width="13" height="10" rx="1.5" />
+                  <rect class="dw-valve" x="252" y="216" width="13" height="10" rx="1.5" />
+                  <rect class="dw-valve" x="252" y="232" width="13" height="10" rx="1.5" />
+                </g>
+                <!-- Pump and inline filter -->
+                <g data-part="pump">
+                  <path class="dw-water dw-water--3" d="M248 393V364" />
+                  <rect class="dw-filter" x="243" y="330" width="10" height="34" rx="5" />
+                  <circle class="dw-pump" cx="248" cy="404" r="11" />
+                </g>
+                <!-- Water tank -->
+                <g data-part="tank">
+                  <rect class="dw-tank" x="236" y="420" width="58" height="56" rx="3" />
+                  <rect class="dw-tank-water" x="237.5" y="446" width="55" height="28.5" rx="2" />
+                </g>
+                <!-- Mist maker on the tank, fog pipe up the column, along the ceiling, out at the roof centre -->
+                <g data-part="mist">
+                  <path class="dw-fog" d="M288 410V97H138V102" />
+                  <path class="dw-puff" d="M133 106L128 113M138 106V114M143 106L148 113" />
+                  <rect class="dw-box" x="280" y="410" width="14" height="10" rx="2" />
+                </g>
+                <!-- IP65 box with the controller and manual panel -->
+                <g data-part="controls">
+                  <rect class="dw-box" x="238" y="104" width="44" height="56" rx="3" />
+                  <rect class="dw-screen" x="244" y="111" width="22" height="12" rx="1" />
+                  <circle class="dw-knob" cx="249" cy="146" r="3.5" /><circle class="dw-knob" cx="263" cy="146" r="3.5" />
+                </g>
+                <!-- Temperature and humidity pods: top, middle and bottom zones -->
+                <g data-part="sensors">
+                  <circle class="dw-sensor" cx="57" cy="150" r="3.5" />
+                  <circle class="dw-sensor" cx="57" cy="294" r="3.5" />
+                  <circle class="dw-sensor" cx="57" cy="438" r="3.5" />
+                </g>
+              </svg>
+              <div class="explore__dots" hidden>
+                <button class="hotspot" type="button" data-part="fans" style="--x: 41%; --y: 14.8%"
+                  aria-label="Exhaust fans" aria-describedby="part-fans-text"></button>
+                <span id="part-fans-text" hidden>Two 6-inch fans on the roof. They run in short bursts when CO2 or heat climbs, pulling fresh air in through a vent low on the back wall.</span>
+                <button class="hotspot" type="button" data-part="mist" style="--x: 72%; --y: 56.4%"
+                  aria-label="Mist maker and fog pipe" aria-describedby="part-mist-text"></button>
+                <span id="part-mist-text" hidden>An ultrasonic mist maker sits on the water tank. Its fog pipe climbs the side column, runs along the ceiling and comes out at the centre of the roof.</span>
+                <button class="hotspot" type="button" data-part="spray" style="--x: 41.5%; --y: 37.6%"
+                  aria-label="Row spray" aria-describedby="part-spray-text"></button>
+                <span id="part-spray-text" hidden>One spray pipe on every shelf, with a fine-mist nozzle above each of the 15 bags, so every bag is wetted directly.</span>
+                <button class="hotspot" type="button" data-part="bags" style="--x: 34.5%; --y: 59.6%"
+                  aria-label="Grow bags" aria-describedby="part-bags-text"></button>
+                <span id="part-bags-text" hidden>15 sterilised sawdust bags of oyster mushrooms, three on each of the five shelves.</span>
+                <button class="hotspot" type="button" data-part="sensors" style="--x: 14.25%; --y: 58.8%"
+                  aria-label="Temperature and humidity sensors" aria-describedby="part-sensors-text"></button>
+                <span id="part-sensors-text" hidden>One at the top, middle and bottom of the chamber, and one outside, so the app shows inside and outside separately.</span>
+                <button class="hotspot" type="button" data-part="controls" style="--x: 65%; --y: 26.4%"
+                  aria-label="Controller and manual panel" aria-describedby="part-controls-text"></button>
+                <span id="part-controls-text" hidden>The ESP32-S3 and power supplies sit in a sealed IP65 box. Its door holds a manual and auto switch and an emergency stop.</span>
+                <button class="hotspot" type="button" data-part="valves" style="--x: 64.5%; --y: 41.8%"
+                  aria-label="Spray valves" aria-describedby="part-valves-text"></button>
+                <span id="part-valves-text" hidden>They open the spray for each group of shelves. They stay closed when off, so a power cut never leaves water running.</span>
+                <button class="hotspot" type="button" data-part="pump" style="--x: 62%; --y: 80.8%"
+                  aria-label="Pump and filter" aria-describedby="part-pump-text"></button>
+                <span id="part-pump-text" hidden>A 12 V pump pushes water through a filter to the spray. It only runs when a valve is open and the tank has water.</span>
+                <button class="hotspot" type="button" data-part="tank" style="--x: 64.5%; --y: 91.2%"
+                  aria-label="Water tank" aria-describedby="part-tank-text"></button>
+                <span id="part-tank-text" hidden>Holds 20 to 30 litres at the bottom of the column. A float switch stops the pump and alerts your phone when it runs low.</span>
+                <button class="hotspot" type="button" data-part="tray" style="--x: 34.5%; --y: 93.8%"
+                  aria-label="Drain tray" aria-describedby="part-tray-text"></button>
+                <span id="part-tray-text" hidden>Covers the whole floor. Used water drains out at the back and is never reused.</span>
+              </div>
+              <div class="explore__card" id="part-card" role="tooltip" hidden>
+                <p class="explore__name"></p>
+                <p class="explore__text"></p>
+              </div>
+            </div>
+            <figcaption class="explore__caption">
+              <span class="explore__hint">Hover over a part of the cabinet, or tap a dot, to see what it does.</span>
+              <span class="explore__static">Front view of the GrowSync cabinet.</span>
+              <!-- Used instead of the floating card when there is no room beside the dot. -->
+              <span class="explore__detail" hidden>
+                <span class="explore__name"></span>
+                <span class="explore__text"></span>
+              </span>
+            </figcaption>
+          </figure>
+        </div>
+
+        <dl class="facts">
+          <div><dt>tall, 1.10 m wide, 0.65 m deep</dt><dd>1.70 m</dd></div>
+          <div><dt>sawdust bags, 5 shelves of 3</dt><dd>15</dd></div>
+          <div><dt>zones sensed inside, plus one outside</dt><dd>3</dd></div>
+          <div><dt>alert limit on your phone</dt><dd>30 °C</dd></div>
+        </dl>
+      </section>
+
+      <!-- ========================== The problem ======================== -->
+      <section class="section container" id="problem" aria-labelledby="problem-title">
+        <div class="section__head reveal">
+          <p class="eyebrow">The problem</p>
+          <h2 class="title" id="problem-title">Oyster mushrooms forgive very little. One missed day can end a flush.</h2>
+          <p class="lead">Small growers keep their bags alive by hand. It works until the day nobody is home.</p>
+        </div>
+
+        <div class="pairs">
+          <div class="pairs__head" aria-hidden="true">
+            <p>Growing by hand today</p>
+            <p class="pairs__head-ours"><span class="dot"></span>With GrowSync</p>
+          </div>
+          <ol class="pairs__list">
+            <li class="pair reveal">
+              <p class="pair__today"><span class="pair__label">Growing by hand today</span>You sprinkle the bags by hand, two or three times a day, every day.</p>
+              <p class="pair__ours"><span class="pair__label">With GrowSync</span>A nozzle above every bag sprays it, and a mist maker keeps the air humid between sprays.</p>
+            </li>
+            <li class="pair reveal">
+              <p class="pair__today"><span class="pair__label">Growing by hand today</span>Miss a single day and the bags dry out.</p>
+              <p class="pair__ours"><span class="pair__label">With GrowSync</span>Spraying and misting run whether or not you are there to do it.</p>
+            </li>
+            <li class="pair reveal">
+              <p class="pair__today"><span class="pair__label">Growing by hand today</span>A dry chamber drifts past 30 °C, and the flush stops.</p>
+              <p class="pair__ours"><span class="pair__label">With GrowSync</span>Roof fans and spray cooling work against the heat, and your phone is alerted if the cabinet stays above 30 °C.</p>
+            </li>
+            <li class="pair reveal">
+              <p class="pair__today"><span class="pair__label">Growing by hand today</span>The time and cost of tending a crop this closely keep new growers out.</p>
+              <p class="pair__ours"><span class="pair__label">With GrowSync</span>A 15-bag cabinet is a small place to start, and it scales to a full grow room later.</p>
+            </li>
+          </ol>
+        </div>
+      </section>
+
+      <!-- ========================== Key features ======================= -->
+      <section class="section container" id="features" aria-labelledby="features-title">
+        <div class="section__head reveal">
+          <p class="eyebrow">Key features</p>
+          <h2 class="title" id="features-title">Five jobs the cabinet takes off your hands.</h2>
+        </div>
+
+        <!-- Phone screens are 780 x 1690. The cabinet photo is 1600 x 1000. -->
+        <div class="features">
+          <div class="feature feature--wide reveal">
+            <article class="card feature__card" data-magnetic>
+              <div class="feature__text">
+                <span class="feature__icon"><svg class="icon" aria-hidden="true"><use href="#i-thermometer" /></svg></span>
+                <h3>Heat kept down, with a 30 °C alarm</h3>
+                <p>There is no compressor. When the cabinet warms up, the roof fans pull in fresh air and the spray cools it as it evaporates. If it stays above 30 °C for ten minutes, your phone gets an alert.</p>
+              </div>
+              <img class="feature__shot feature__shot--phone" src="mockups/temperature.png" width="780" height="1690" loading="lazy" decoding="async" alt="GrowSync app screen showing cabinet temperature against the 30 °C alert limit." />
+            </article>
+          </div>
+
+          <div class="feature feature--narrow reveal">
+            <article class="card feature__card" data-magnetic>
+              <div class="feature__text">
+                <span class="feature__icon"><svg class="icon" aria-hidden="true"><use href="#i-droplets" /></svg></span>
+                <h3>Mist first, then spray</h3>
+                <p>When humidity drops, a mist maker sends fog along the ceiling and down over the bags. If the air is still dry after a set time, the row spray takes over.</p>
+              </div>
+              <img class="feature__shot feature__shot--phone" src="mockups/humidity.png" width="780" height="1690" loading="lazy" decoding="async" alt="GrowSync app screen showing humidity inside the cabinet." />
+            </article>
+          </div>
+
+          <div class="feature feature--narrow reveal">
+            <article class="card feature__card" data-magnetic>
+              <div class="feature__text">
+                <span class="feature__icon"><svg class="icon" aria-hidden="true"><use href="#i-shower-head" /></svg></span>
+                <h3>A nozzle above every bag</h3>
+                <p>Five spray pipes, one per shelf, carry a fine-mist nozzle over each of the 15 bags, so every bag is wetted directly.</p>
+              </div>
+              <img class="feature__shot feature__shot--phone" src="mockups/watering.png" width="780" height="1690" loading="lazy" decoding="async" alt="GrowSync app screen showing the spray for the five shelves." />
+            </article>
+          </div>
+
+          <div class="feature feature--wide reveal">
+            <article class="card feature__card" data-magnetic>
+              <div class="feature__text">
+                <span class="feature__icon"><svg class="icon" aria-hidden="true"><use href="#i-bell-ring" /></svg></span>
+                <h3>Alerts on your phone</h3>
+                <p>The app shows readings for the top, middle and bottom of the cabinet, with inside and outside shown separately. It alerts you when the cabinet runs too hot, the water tank runs low or a sensor goes offline.</p>
+              </div>
+              <img class="feature__shot feature__shot--phone" src="mockups/alerts.png" width="780" height="1690" loading="lazy" decoding="async" alt="GrowSync app screen showing an alert sent to the grower’s phone." />
+            </article>
+          </div>
+
+          <div class="feature feature--full reveal">
+            <article class="card feature__card" data-magnetic>
+              <div class="feature__text">
+                <span class="feature__icon"><svg class="icon" aria-hidden="true"><use href="#i-wind" /></svg></span>
+                <h3>Fresh air when CO2 builds up</h3>
+                <p>A CO2 sensor watches the air inside. When CO2 or heat climbs, two exhaust fans on the roof run in short bursts and fresh air comes in through a vent low on the back wall.</p>
+              </div>
+              <img class="feature__shot feature__shot--photo" src="mockups/cabinet.png" width="1600" height="1000" loading="lazy" decoding="async" alt="The GrowSync cabinet from the front, with its two roof exhaust fans and the service column on the right." />
+            </article>
+          </div>
+        </div>
+      </section>
+
+      <!-- ========================= How it's built ====================== -->
+      <section class="band on-dark" id="how-it-works" aria-labelledby="built-title">
+        <div class="section container built">
+          <div class="built__copy reveal">
+            <p class="eyebrow">How it's built</p>
+            <h2 class="title" id="built-title">A cabinet, a backend and an app, working as one system.</h2>
+            <p class="lead lead--sm">
+              An ESP32-S3 in the cabinet reads four temperature and humidity sensors (three zones inside, one
+              outside), a CO2 sensor, a light sensor and the tank level. It drives the pump, spray valves, mist maker,
+              roof fans and LED grow lights. It reports to a Spring Boot backend, and you watch the cabinet from the
+              mobile app or a PC dashboard. GrowSync is built with the Mushroom Development and Training Centre
+              (MDTC), and the demo cabinet is designed to scale to a full grow room later.
+            </p>
+          </div>
+
+          <ol class="stack reveal">
+            <li>
+              <span class="stack__icon"><svg class="icon" aria-hidden="true"><use href="#i-cpu" /></svg></span>
+              <div><h3>ESP32-S3</h3><p>Reads the sensors and runs the control rules, in manual or auto mode. It keeps control if Wi-Fi drops.</p></div>
+            </li>
+            <li>
+              <span class="stack__icon"><svg class="icon" aria-hidden="true"><use href="#i-server" /></svg></span>
+              <div><h3>Spring Boot</h3><p>Stores readings and events, and raises alerts for high temperature, a low tank or an offline sensor.</p></div>
+            </li>
+            <li>
+              <span class="stack__icon"><svg class="icon" aria-hidden="true"><use href="#i-smartphone" /></svg></span>
+              <div><h3>Mobile app and dashboard</h3><p>Live readings for each zone, history, thresholds and push alerts.</p></div>
+            </li>
+          </ol>
+        </div>
+      </section>
+
+      <!-- ============================== Team =========================== -->
+      <section class="section container" id="team" aria-labelledby="team-title">
+        <div class="team">
+          <div class="section__head reveal">
+            <p class="eyebrow">Team</p>
+            <h2 class="title" id="team-title">Five people, one chamber.</h2>
+          </div>
+          <ul class="roster reveal">
+            <li><span class="roster__name">Pasan Chandima</span><span class="roster__role">Scrum Master / DevOps / Developer</span></li>
+            <li><span class="roster__name">Tharuki Inupama Atapattu</span><span class="roster__role">Product Owner / Developer</span></li>
+            <li><span class="roster__name">Hashini Nethsarani Balasuriya</span><span class="roster__role">UI/UX</span></li>
+            <li><span class="roster__name">Pudam Thewnaka Weerakkodi</span><span class="roster__role">Hardware</span></li>
+            <li><span class="roster__name">Tamasha Nirodha Rathnayake</span><span class="roster__role">Backend</span></li>
+          </ul>
+        </div>
+      </section>
+
+      <!-- ============================ Waitlist ========================= -->
+      <section class="section container" id="waitlist" aria-labelledby="waitlist-title">
+        <div class="waitlist">
+          <div class="section__head reveal">
+            <p class="eyebrow">Join the waitlist</p>
+            <h2 class="title" id="waitlist-title">Be told when GrowSync is ready for growers.</h2>
+            <p class="lead lead--sm">
+              Leave your details and we will contact you when the cabinet is available. Telling us your district
+              helps us see where growers are.
+            </p>
+          </div>
+
+          <div class="card waitlist__card reveal">
+            <noscript>
+              <p class="form-alert">
+                The waitlist form needs JavaScript. Please turn it on, or email
+                <a class="text-link" href="mailto:hello@growsync.lk">hello@growsync.lk</a> instead.
+              </p>
+            </noscript>
+
+            <form id="waitlist-form" method="post" novalidate>
+              <!-- Disabled until the script is running, so details are never sent anywhere by accident. -->
+              <fieldset class="form" disabled>
+                <legend class="visually-hidden">Your details</legend>
+
+                <div class="form__grid">
+                  <div class="field">
+                    <label for="wl-name">Name</label>
+                    <input id="wl-name" name="name" type="text" autocomplete="name" required />
+                    <p class="field__error" id="wl-name-error" hidden></p>
+                  </div>
+
+                  <div class="field">
+                    <label for="wl-email">Email</label>
+                    <input id="wl-email" name="email" type="email" inputmode="email" autocomplete="email" required />
+                    <p class="field__error" id="wl-email-error" hidden></p>
+                  </div>
+
+                  <div class="field">
+                    <label for="wl-phone">Phone</label>
+                    <p class="field__hint" id="wl-phone-hint">For example 071 234 5678</p>
+                    <input id="wl-phone" name="phone" type="tel" inputmode="tel" autocomplete="tel" required aria-describedby="wl-phone-hint" />
+                    <p class="field__error" id="wl-phone-error" hidden></p>
+                  </div>
+
+                  <div class="field">
+                    <label for="wl-district">District</label>
+                    <p class="field__hint" id="wl-district-hint">Where you grow, or plan to</p>
+                    <select id="wl-district" name="district" required aria-describedby="wl-district-hint">
+                      <option value="">Choose a district</option>
+                      <option>Ampara</option>
+                      <option>Anuradhapura</option>
+                      <option>Badulla</option>
+                      <option>Batticaloa</option>
+                      <option>Colombo</option>
+                      <option>Galle</option>
+                      <option>Gampaha</option>
+                      <option>Hambantota</option>
+                      <option>Jaffna</option>
+                      <option>Kalutara</option>
+                      <option>Kandy</option>
+                      <option>Kegalle</option>
+                      <option>Kilinochchi</option>
+                      <option>Kurunegala</option>
+                      <option>Mannar</option>
+                      <option>Matale</option>
+                      <option>Matara</option>
+                      <option>Monaragala</option>
+                      <option>Mullaitivu</option>
+                      <option>Nuwara Eliya</option>
+                      <option>Polonnaruwa</option>
+                      <option>Puttalam</option>
+                      <option>Ratnapura</option>
+                      <option>Trincomalee</option>
+                      <option>Vavuniya</option>
+                    </select>
+                    <p class="field__error" id="wl-district-error" hidden></p>
+                  </div>
+                </div>
+
+                <p class="form-alert" id="waitlist-alert" role="alert" hidden></p>
+
+                <div class="form__foot">
+                  <button class="button" type="submit" id="waitlist-submit" data-magnetic>
+                    <svg class="icon icon--sm spinner" aria-hidden="true" hidden><use href="#i-loader-circle" /></svg>
+                    <span id="waitlist-submit-label">Join the waitlist</span>
+                  </button>
+                  <p class="small muted">
+                    We use these details only to contact you about GrowSync. Read the
+                    <a class="text-link text-link--plain" href="#privacy">privacy notice</a>.
+                  </p>
+                </div>
+              </fieldset>
+            </form>
+
+            <div class="form-success" id="waitlist-success" role="status" tabindex="-1" hidden>
+              <span class="form-success__icon"><svg class="icon" aria-hidden="true"><use href="#i-circle-check" /></svg></span>
+              <h3>You are on the waitlist.</h3>
+              <p class="muted">
+                We have your details and will be in touch. To be removed at any time, email
+                <a class="text-link text-link--plain" href="mailto:hello@growsync.lk">hello@growsync.lk</a>.
+              </p>
+              <button class="button button--outline" type="button" id="waitlist-again">Add another person</button>
+            </div>
+          </div>
+        </div>
+      </section>
+    </main>
+
+    <!-- ======================= Contact and footer ====================== -->
+    <footer class="footer" id="contact">
+      <div class="container footer__grid">
+        <div class="footer__about">
+          <span class="logo">
+            <svg class="logo__mark" viewBox="0 0 32 32" aria-hidden="true">
+              <rect class="logo__box" x="4.5" y="3.5" width="23" height="25" rx="3.5" />
+              <path class="logo__cap" d="M9.5 18c0-4.4 2.9-8 6.5-8s6.5 3.6 6.5 8z" />
+              <path class="logo__shine" d="M12.2 13.6c1-1.3 2.3-2 3.8-2" />
+              <path class="logo__stem" d="M14 18h4v3.6a2 2 0 0 1-4 0z" />
+            </svg>
+            <span class="logo__word">GrowSync</span>
+          </span>
+          <p class="muted">
+            A smart indoor grow cabinet for small oyster mushroom growers in Sri Lanka, built with the Mushroom
+            Development and Training Centre (MDTC).
+          </p>
+        </div>
+
+        <div class="footer__contact">
+          <h2>Contact</h2>
+          <!-- PLACEHOLDER: contact email. It also appears in the waitlist section and in js/config.js. -->
+          <a class="text-link footer__mail" href="mailto:hello@growsync.lk">
+            <svg class="icon icon--sm" aria-hidden="true"><use href="#i-mail" /></svg>hello@growsync.lk
+          </a>
+          <!-- PLACEHOLDER: these point at each platform's home page. Replace with the team's own pages. -->
+          <ul class="footer__social">
+            <li><a class="text-link" href="https://www.facebook.com/" target="_blank" rel="noopener noreferrer">Facebook<span class="visually-hidden"> (opens in a new tab)</span></a></li>
+            <li><a class="text-link" href="https://www.instagram.com/" target="_blank" rel="noopener noreferrer">Instagram<span class="visually-hidden"> (opens in a new tab)</span></a></li>
+            <li><a class="text-link" href="https://www.linkedin.com/" target="_blank" rel="noopener noreferrer">LinkedIn<span class="visually-hidden"> (opens in a new tab)</span></a></li>
+            <li><a class="text-link" href="https://www.youtube.com/" target="_blank" rel="noopener noreferrer">YouTube<span class="visually-hidden"> (opens in a new tab)</span></a></li>
+          </ul>
+        </div>
+
+        <div class="footer__privacy" id="privacy">
+          <h2>Privacy notice</h2>
+          <p><strong>What we collect.</strong> Only what you type into the waitlist form: your name, email address, phone number and district.</p>
+          <p><strong>Why.</strong> To contact you about GrowSync, and to see which districts growers are in. The form is delivered to us by a form-handling service. We do not sell your details or use them for advertising.</p>
+          <p><strong>Deleting your details.</strong> Email <a class="text-link" href="mailto:hello@growsync.lk?subject=Delete%20my%20waitlist%20details">hello@growsync.lk</a> from the address you signed up with and we will delete them.</p>
+          <p>This site sets no tracking cookies. It remembers your light or dark theme choice in your own browser.</p>
+        </div>
+      </div>
+
+      <div class="footer__base">
+        <p class="container small muted">© <span id="year">2026</span> GrowSync.</p>
+      </div>
+    </footer>
+
+    <div class="cursor" id="cursor" aria-hidden="true"></div>
+
+    <script src="js/config.js"></script>
+    <script src="js/main.js" defer></script>
+  </body>
+</html>
