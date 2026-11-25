@@ -8,7 +8,6 @@ window.GROWSYNC = {
   // Leave empty and the form says plainly that nothing was sent.
   waitlistEndpoint: '',
 
-  // PLACEHOLDER: shown in form error messages. Keep it the same as the
-  // address in index.html (footer and waitlist section).
-  contactEmail: 'hello@growsync.lk',
+  // Shown in form error messages. Keep it the same as the address in index.html.
+  contactEmail: 'themushroom26@gmail.com',
 }
