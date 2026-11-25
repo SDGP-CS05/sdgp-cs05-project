@@ -381,7 +381,7 @@
     var again = $('#waitlist-again')
 
     var endpoint = (config.waitlistEndpoint || '').trim()
-    var email = config.contactEmail || 'hello@growsync.lk'
+    var email = config.contactEmail || 'themushroom26@gmail.com'
     var TIMEOUT_MS = 15000
     var sending = false
 
