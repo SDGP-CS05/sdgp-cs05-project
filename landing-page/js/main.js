@@ -544,9 +544,10 @@
   ---------------------------------------------------------------- */
   var loader = $('.loader')
   if (loader) {
+    // Matches the end of the loader timeline in css/styles.css (3.0s).
     setTimeout(function () {
       loader.remove()
-    }, 1850)
+    }, 3050)
   }
 
   var year = $('#year')

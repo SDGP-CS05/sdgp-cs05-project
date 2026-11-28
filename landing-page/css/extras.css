@@ -1,0 +1,396 @@
+/* ==================================================================
+   Extras: hero background, demo sensor card, card glow.
+   Only palette variables from styles.css are used. No new colours.
+================================================================== */
+
+/* Hero background canvas (js/spores.js) */
+.section--hero {
+  position: relative;
+}
+
+.spores {
+  position: absolute;
+  top: 0;
+  left: 50%;
+  width: 100vw;
+  height: 100%;
+  transform: translateX(-50%);
+  pointer-events: none;
+  z-index: 0;
+}
+
+.section--hero > *:not(.spores) {
+  position: relative;
+  z-index: 1;
+}
+
+/* Settling spores behind the waitlist (js/section-fx.js).
+   Full page width, behind the content. */
+.has-fx {
+  position: relative;
+  isolation: isolate;
+}
+
+.section-fx {
+  position: absolute;
+  top: 0;
+  left: 50%;
+  width: 100vw;
+  height: 100%;
+  transform: translateX(-50%);
+  pointer-events: none;
+  z-index: -1;
+}
+
+/* "How it's built" timeline: a signal travels down the line and each step
+   lights up as it arrives (ESP32 -> Spring Boot -> app). Runs only while
+   the list is on screen (js/section-fx.js adds .is-running), and restarts
+   each time it scrolls into view. One loop takes 4.8s:
+     0.0s  ESP32 lights        0.4-1.6s  signal travels to Spring Boot
+     1.6s  Spring Boot lights  2.0-3.2s  signal travels to the app
+     3.2s  App lights, then a short rest before the next loop. */
+.stack li:not(:last-child)::after {
+  content: '';
+  position: absolute;
+  top: 48px;
+  left: 24px;
+  width: 8px;
+  height: 8px;
+  margin-left: -4px;
+  border-radius: 50%;
+  background: var(--oat);
+  box-shadow: 0 0 0 3px color-mix(in srgb, var(--taupe) 45%, transparent),
+    0 0 14px 2px var(--taupe);
+  opacity: 0;
+  pointer-events: none;
+}
+
+.stack.is-running li:not(:last-child)::after {
+  animation: stack-signal 4.8s linear infinite;
+}
+
+.stack.is-running li:nth-child(1)::after {
+  animation-delay: 0.4s;
+}
+
+.stack.is-running li:nth-child(2)::after {
+  animation-delay: 2s;
+}
+
+.stack__icon {
+  transition: background 0.3s ease, color 0.3s ease;
+}
+
+.stack.is-running .stack__icon {
+  animation: stack-light 4.8s ease-in-out infinite;
+}
+
+.stack.is-running li:nth-child(2) .stack__icon {
+  animation-delay: 1.6s;
+}
+
+.stack.is-running li:nth-child(3) .stack__icon {
+  animation-delay: 3.2s;
+}
+
+/* Travel time is 25% of the loop (1.2s). */
+@keyframes stack-signal {
+  0% {
+    top: 48px;
+    opacity: 0;
+  }
+  3% {
+    opacity: 1;
+  }
+  23% {
+    opacity: 1;
+  }
+  25% {
+    top: calc(100% - 4px);
+    opacity: 0;
+  }
+  100% {
+    top: calc(100% - 4px);
+    opacity: 0;
+  }
+}
+
+/* Lit for about a second, then fades back over half a second. */
+@keyframes stack-light {
+  6%,
+  28% {
+    background: var(--taupe);
+    border-color: var(--oat);
+    color: var(--mocha);
+    box-shadow: 0 0 0 6px color-mix(in srgb, var(--taupe) 22%, transparent),
+      0 0 26px 2px color-mix(in srgb, var(--taupe) 70%, transparent);
+    transform: scale(1.08);
+  }
+  40%,
+  100% {
+    background: transparent;
+    border-color: var(--taupe);
+    color: var(--sand);
+    box-shadow: none;
+    transform: none;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .stack.is-running li:not(:last-child)::after,
+  .stack.is-running .stack__icon {
+    animation: none;
+  }
+}
+
+/* English / Sinhala switch (js/i18n.js): top right on every screen size.
+   Both options show; the active one is filled. */
+@media (min-width: 768px) {
+  .wordmark-row {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+  }
+}
+
+.lang-toggle {
+  display: inline-flex;
+  align-items: center;
+  gap: 2px;
+  min-height: 40px;
+  padding: 3px;
+  border: 1px solid var(--line);
+  border-radius: var(--radius-pill);
+  background: var(--surface);
+  color: var(--ink);
+  font: inherit;
+  font-size: 0.875rem;
+  font-weight: 600;
+  cursor: pointer;
+}
+
+.lang-toggle:hover {
+  border-color: var(--taupe);
+}
+
+.lang-toggle__opt {
+  padding: 4px 12px;
+  border-radius: var(--radius-pill);
+  line-height: 1.4;
+  transition: background 0.2s ease, color 0.2s ease;
+}
+
+.lang-toggle__opt[lang='si'] {
+  font-family: 'Noto Sans Sinhala', 'Nirmala UI', 'Iskoola Pota', 'Sinhala Sangam MN', sans-serif;
+}
+
+/* Filled pill marks the language in use. */
+.lang-toggle[aria-pressed='false'] .lang-toggle__opt[lang='en'],
+.lang-toggle[aria-pressed='true'] .lang-toggle__opt[lang='si'] {
+  background: var(--cta);
+  color: var(--cta-ink);
+}
+
+/* Phone top bar: compact, so it leaves room for the logo. */
+.topbar__actions .lang-toggle {
+  min-height: 34px;
+  padding: 2px;
+  margin-right: var(--s-1);
+  font-size: 0.8125rem;
+}
+
+.topbar__actions .lang-toggle__opt {
+  padding: 3px 8px;
+}
+
+/* Sinhala text: the brand fonts have no Sinhala letters, so use the
+   device's Sinhala font, and give the taller letters more line height. */
+html:lang(si) body {
+  font-family: 'Noto Sans Sinhala', 'Nirmala UI', 'Iskoola Pota', 'Sinhala Sangam MN', var(--font-body);
+}
+
+html:lang(si) h1,
+html:lang(si) h2,
+html:lang(si) h3 {
+  font-family: 'Noto Serif Sinhala', 'Noto Sans Sinhala', 'Nirmala UI', 'Iskoola Pota', 'Sinhala Sangam MN', serif;
+}
+
+html:lang(si) .display {
+  font-size: clamp(1.875rem, 1.2rem + 2.4vw, 2.875rem);
+  line-height: 1.3;
+}
+
+html:lang(si) .title {
+  line-height: 1.35;
+}
+
+html:lang(si) .eyebrow {
+  letter-spacing: 0;
+}
+
+/* ---------------------- Dark theme polish ----------------------- */
+/* Cards: a faint top highlight so their edges read on the dark page. */
+.dark .card {
+  border-color: color-mix(in srgb, var(--sand) 14%, transparent);
+  box-shadow: inset 0 1px 0 color-mix(in srgb, var(--sand) 8%, transparent), var(--shadow);
+}
+
+/* Warm accent for the small section labels. */
+.dark .eyebrow {
+  color: var(--taupe);
+}
+
+/* Bright phone screenshots and photos glare on a dark page: tone down. */
+.dark .feature__shot,
+.dark .team__frame > img {
+  filter: brightness(0.86);
+}
+
+/* Dock: dark buttons instead of bright cream circles. */
+.dark .dock {
+  background: var(--surface);
+  border-color: color-mix(in srgb, var(--sand) 16%, transparent);
+  box-shadow: var(--shadow);
+}
+
+.dark .dock__item > a,
+.dark .dock__item > button {
+  background: color-mix(in srgb, var(--sand) 10%, transparent);
+  color: var(--sand);
+}
+
+.dark .dock__item > a:hover,
+.dark .dock__item > button:hover {
+  background: color-mix(in srgb, var(--sand) 20%, transparent);
+  color: var(--oat);
+}
+
+.dark .dock__item > a[aria-current] {
+  background: var(--taupe);
+  color: var(--mocha);
+}
+
+/* Feature icons and form fields sit a step darker than their card. */
+.dark .feature__icon {
+  background: var(--page);
+  color: var(--taupe);
+}
+
+.dark .field input,
+.dark .field select {
+  background: var(--page);
+  border-color: color-mix(in srgb, var(--sand) 32%, transparent);
+}
+
+.dark .field input:focus,
+.dark .field select:focus {
+  border-color: var(--sand);
+}
+
+/* "How it's built" band: a step lighter than the page, like a card. */
+.dark .band {
+  background: var(--surface);
+}
+
+/* Hero drawing on laptops: size the cabinet by the screen height as well
+   as the column width, so the whole card, including the "Hover over a
+   part" hint, ends above the dock even on short screens. The stage is
+   about 0.8 as wide as it is tall; ~300px covers the space above the
+   card, the card's padding and caption, and the dock. */
+@media (min-width: 1024px) {
+  .hero__figure .explore__stage {
+    max-width: min(100%, max(15rem, calc((100vh - 340px) * 0.8)));
+  }
+}
+
+/* From 1280px the page uses the compact 90% spacing, so less room is needed. */
+@media (min-width: 1280px) {
+  .hero__figure .explore__stage {
+    max-width: min(100%, max(15rem, calc((100vh - 300px) * 0.8)));
+  }
+}
+
+/* Demo sensor card */
+.sensor {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: space-between;
+  gap: var(--s-6);
+  margin-top: var(--s-12);
+}
+
+.sensor__head {
+  display: flex;
+  align-items: center;
+  gap: var(--s-2);
+}
+
+.sensor__dot {
+  width: 10px;
+  height: 10px;
+  border-radius: var(--radius-pill);
+  background: var(--sage);
+  box-shadow: 0 0 0 4px color-mix(in srgb, var(--sage) 25%, transparent);
+  transition: background 0.4s ease, box-shadow 0.4s ease;
+}
+
+.sensor.is-misting .sensor__dot {
+  background: var(--taupe);
+  box-shadow: 0 0 0 4px color-mix(in srgb, var(--taupe) 30%, transparent);
+}
+
+.sensor__tag {
+  padding: 0 var(--s-2);
+  border: 1px solid var(--line);
+  border-radius: var(--radius-pill);
+  color: var(--ink-soft);
+  font-size: 0.8rem;
+}
+
+.sensor__grid {
+  display: flex;
+  flex-wrap: wrap;
+  gap: var(--s-6);
+  margin: 0;
+}
+
+.sensor__grid div {
+  min-width: 80px;
+}
+
+.sensor__grid dt {
+  color: var(--ink-soft);
+  font-size: 0.85rem;
+}
+
+.sensor__grid dd {
+  margin: 0;
+  font-family: var(--font-display);
+  font-size: 1.5rem;
+  color: var(--ink);
+}
+
+/* Mouse-follow glow on feature cards (js/glow-cards.js) */
+.glow {
+  position: relative;
+}
+
+.glow::after {
+  content: '';
+  position: absolute;
+  inset: 0;
+  border-radius: inherit;
+  pointer-events: none;
+  opacity: 0;
+  transition: opacity 0.25s ease;
+  background: radial-gradient(
+    260px circle at var(--mx, 50%) var(--my, 50%),
+    color-mix(in srgb, var(--taupe) 16%, transparent),
+    transparent 70%
+  );
+}
+
+.glow:hover::after {
+  opacity: 1;
+}

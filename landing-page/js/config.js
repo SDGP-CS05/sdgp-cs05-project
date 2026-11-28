@@ -6,7 +6,7 @@ window.GROWSYNC = {
   // Form endpoint that accepts a JSON POST and answers with JSON,
   // for example a Formspree form: 'https://formspree.io/f/your-form-id'
   // Leave empty and the form says plainly that nothing was sent.
-  waitlistEndpoint: '',
+  waitlistEndpoint: 'https://formspree.io/f/xbgoekde',
 
   // Shown in form error messages. Keep it the same as the address in index.html.
   contactEmail: 'themushroom26@gmail.com',
